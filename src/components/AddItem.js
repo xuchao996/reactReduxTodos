@@ -17,6 +17,7 @@ function AddItem(props) {
         placeholder="请输入"
         ref={textInput}
         onChange={(e) => (val = e.target.value)}
+        style={{ marginRight: "5px" }}
       />
       <button onClick={() => addHandler(val)}>add</button>
     </div>

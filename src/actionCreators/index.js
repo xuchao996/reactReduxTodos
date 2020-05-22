@@ -1,27 +1,34 @@
+import {
+  ADD_TODO,
+  CHANGE_TODO,
+  DELETE_TODOS,
+  FILTER_STATUS,
+} from "../actionTypes";
+
 export function add(data) {
   return {
-    type: "add",
+    type: ADD_TODO,
     data,
   };
 }
 
 export function changed(id) {
   return {
-    type: "changed",
+    type: CHANGE_TODO,
     id,
   };
 }
 
 export function deleted(id) {
   return {
-    type: "deleted",
+    type: DELETE_TODOS,
     id,
   };
 }
 
 export function toggleStatus(data) {
   return {
-    type: "toggleStatus",
+    type: FILTER_STATUS,
     data,
   };
 }
