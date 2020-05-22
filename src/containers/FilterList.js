@@ -4,9 +4,10 @@ import Item from "../components/Item";
 import { connect } from "react-redux";
 
 // action create
-import { changed, filterStatus } from "../actionCreators/index";
+import { changed, filterStatus, getList } from "../actionCreators/index";
 
 function List(props) {
+  props.getList();
   const { list } = props;
   const changeStatus = (id) => {
     props.changed(id);
@@ -47,5 +48,6 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = {
   changed,
+  getList,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(List);

@@ -3,7 +3,21 @@ import {
   CHANGE_TODO,
   DELETE_TODOS,
   FILTER_STATUS,
+  GET_TODO,
 } from "../actionTypes";
+
+import { getList as getListApi } from "../api";
+
+export function getList() {
+  return function (dispatch) {
+    getListApi().then((response) => {
+      dispatch({
+        type: GET_TODO,
+        data: response,
+      });
+    });
+  };
+}
 
 export function add(data) {
   return {
